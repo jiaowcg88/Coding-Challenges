@@ -15,6 +15,7 @@
 * go to print the string
 * starting from the most frequencies of character to the least frequencies of character.
 * if there are same frequencies
+*/
 
 import java.util.*;
 
