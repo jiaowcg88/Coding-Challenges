@@ -1,4 +1,10 @@
 
+/**
+*  given a vote list ={(a, 100), (b, 150), (a, 200)} and given time t, find out before t, the target people with hightest votes.
+*
+*
+**/
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.*;
