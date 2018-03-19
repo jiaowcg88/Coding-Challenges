@@ -19,6 +19,7 @@ class Pair {
 }
 
 public class Solution {
+    //get the people with highest votes
     public static String getHighest(List<Pair>list, long time) {
         if (time == 0) return null;
         Map<String, Integer> map = new HashMap<>();
@@ -39,6 +40,28 @@ public class Solution {
             }
         }
         return result;
+    }
+    
+      // get top k people with high votes
+    public static String[] getTopKHighest(List<Pair>list, long time, int k) {
+        if (time == 0) return null;
+        LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
+        for (int i = 0; i<list.size(); i++) {
+            Pair p = list.get(i);
+            if (p.timestamp <= time) {
+                map.put(p.name, map.getOrDefault(p.name,0) + 1);
+            }
+        }
+        String[] people = new String[k];
+        int index = 0;
+        for (String key : map.keySet()) {
+            if (k > 0) {
+                people[index++] = key;
+                k--;
+            }
+            if (k == 0) break;
+        }
+        return people;
     }
 
     public static void main(String[] args) {
